@@ -6,8 +6,7 @@
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":12},
-	"sourceSize": {"w":12,"h":12},
-	"pivot": {"x":0.5,"y":0.5}
+	"sourceSize": {"w":12,"h":12}
 },
 {
 	"filename": "block_on.png",
@@ -15,8 +14,7 @@
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":12},
-	"sourceSize": {"w":12,"h":12},
-	"pivot": {"x":0.5,"y":0.5}
+	"sourceSize": {"w":12,"h":12}
 },
 {
 	"filename": "btn_restart.png",
@@ -24,8 +22,7 @@
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":75},
-	"sourceSize": {"w":200,"h":75},
-	"pivot": {"x":0.5,"y":0.5}
+	"sourceSize": {"w":200,"h":75}
 },
 {
 	"filename": "btn_start.png",
@@ -33,8 +30,7 @@
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":75},
-	"sourceSize": {"w":200,"h":75},
-	"pivot": {"x":0.5,"y":0.5}
+	"sourceSize": {"w":200,"h":75}
 },
 {
 	"filename": "bullet.png",
@@ -42,8 +38,7 @@
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":12},
-	"sourceSize": {"w":12,"h":12},
-	"pivot": {"x":0.5,"y":0.5}
+	"sourceSize": {"w":12,"h":12}
 },
 {
 	"filename": "cd_bg.png",
@@ -51,26 +46,31 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":4,"w":200,"h":192},
-	"sourceSize": {"w":200,"h":200},
-	"pivot": {"x":0.5,"y":0.5}
+	"sourceSize": {"w":200,"h":200}
 },
 {
 	"filename": "cigarette.png",
-	"frame": {"x":203,"y":78,"w":100,"h":70},
+	"frame": {"x":203,"y":78,"w":100,"h":10},
 	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":70},
-	"sourceSize": {"w":100,"h":72},
-	"pivot": {"x":0.5,"y":0.5}
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":10},
+	"sourceSize": {"w":100,"h":10}
 },
 {
-	"filename": "limit_h.png",
+	"filename": "limit_bottom.png",
 	"frame": {"x":305,"y":78,"w":100,"h":1},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":1},
-	"sourceSize": {"w":100,"h":1},
-	"pivot": {"x":0.5,"y":0.5}
+	"sourceSize": {"w":100,"h":1}
+},
+{
+	"filename": "limit_top.png",
+	"frame": {"x":305,"y":78,"w":100,"h":1},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":1},
+	"sourceSize": {"w":100,"h":1}
 },
 {
 	"filename": "limit_v.png",
@@ -78,8 +78,7 @@
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":1,"h":100},
-	"sourceSize": {"w":1,"h":100},
-	"pivot": {"x":0.5,"y":0.5}
+	"sourceSize": {"w":1,"h":100}
 },
 {
 	"filename": "panel.png",
@@ -87,8 +86,7 @@
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":350,"h":250},
-	"sourceSize": {"w":350,"h":250},
-	"pivot": {"x":0.5,"y":0.5}
+	"sourceSize": {"w":350,"h":250}
 },
 {
 	"filename": "skull.png",
@@ -96,8 +94,7 @@
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":90,"h":78},
-	"sourceSize": {"w":90,"h":78},
-	"pivot": {"x":0.5,"y":0.5}
+	"sourceSize": {"w":90,"h":78}
 }],
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker",
@@ -106,6 +103,6 @@
 	"format": "RGBA8888",
 	"size": {"w":444,"h":523},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:faa2fe344da43b16e041630c2d58b779:4df7f76f4b301a5adbc57ddf9833817a:e16c4ef76058b83bed243ed3642d6389$"
+	"smartupdate": "$TexturePacker:SmartUpdate:b9dc5ae4a1f378bfd726f4d56a6e0c53:c8d76e28a9036e374e77353945562793:e16c4ef76058b83bed243ed3642d6389$"
 }
 }

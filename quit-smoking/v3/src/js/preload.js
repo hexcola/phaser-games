@@ -1,18 +1,32 @@
-
-var audioJSON = {
-    spritemap:{
-        'menu':{ start: 0, end: 59.5, loop: true },
-        'beep':{ start: 59.5, end: 60, loop: false},
-        'bounce': { start: 60, end: 60.5, loop: false},
-        'hit' :{ start: 60.5, end: 61, loop: false},
-        'death': { start: 61, end: 62, loop: false}
-    }
-}
-
 var preload = function(game){}
 
 preload.prototype = {
     preload: function(){
+
+        // this add Text if come from libs/helper.js
+        addText(this.game, this.game.world.centerX, 
+            this.game.world.centerY-100, "Quit\n Smoking", "80px Arial");
+
+        this.loadProcess = addText(this.game, 
+            this.game.world.centerX, 
+            this.game.world.centerY + 100, 
+            "Loading 0%","14px Arial");
+        
+        addText(this.game, 
+            this.game.world.centerX, 
+            this.game.world.height-30, 
+            "Author: hexcola\n Inspired by a Quit Smoking Poster","14px Arial");
+
+        var preloadbarBorder = this.add.sprite(this.game.world.centerX, this.game.world.centerY + 60, 'preloadbarBorder');
+        preloadbarBorder.anchor.setTo(0.5);
+
+        this.preloadbar = this.add.sprite(this.game.world.centerX - 83.5, this.game.world.centerY + 60, 'preloadbar');
+        this.preloadbar.anchor.setTo(0, 0.5);
+        this.load.setPreloadSprite(this.preloadbar);
+
+        this.load.onLoadComplete.add(this.loadComplete, this);
+        
+
         // load audio resource
         this.game.load.audiosprite(this.game.customConfig.audioSprite.key,
             this.game.customConfig.audioSprite.urls,
@@ -21,25 +35,17 @@ preload.prototype = {
         this.game.load.atlasJSONArray(this.game.customConfig.imageSprite.key,
             this.game.customConfig.imageSprite.textureURL,
             this.game.customConfig.imageSprite.atlasURL);
+    },
 
-        // this.game.load.audiosprite('defaultRes_audio', [
-        //     this.game.config.default.audiosRootPath + 'defaultRes_audio.mp3', 
-        //     // this.game.config.default.audiosRootPath + 'defaultRes_audio.ogg'], null, "config/audio.json");
-        //     this.game.config.default.audiosRootPath + 'defaultRes_audio.ogg'], "config/audio.json");
-            
+    loadUpdate: function(){
+        this.loadProcess.setText("Loading " + this.load.progress + "%");
+    },
 
-        // // load texture resource
-        // this.game.load.atlasJSONArray(
-        //     'defaultRes',
-        //     this.game.config.default.imagesRootPath + 'defaultRes.png',
-        //     this.game.config.default.imagesRootPath + 'defaultRes.json'
-        // );
+    loadComplete: function(){
+        this.ready = true;
     },
 
     create: function(){
-        this.game.isDebug = true;
-        // this.game.add.plugin(Phaser.Plugin.Debug);
-        
         this.game.allAudios = this.game.add.audioSprite('defaultRes_audio');
         this.game.allAudios.allowMultiple = true;
 

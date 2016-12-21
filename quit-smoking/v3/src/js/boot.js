@@ -34,34 +34,31 @@ var boot = function(game){
 }
 
 boot.prototype = {
+   
     init: function(){
+        
+        // set scale
         this.game.renderer.renderSession.roundPixels = true;
         this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
         this.scale.pageAlignHorizontally = true;
         this.scale.pageAlignVertically = true;
 
+        // set physics
+        this.game.physics.startSystem(Phaser.Physics.ARCADE);
         this.game.customConfig = config;
     },
 
     preload: function(){
-        wtf(this.game)
-        // for(var i=0; i< this.game.customConfig.bootPreloadImages.length; i ++){
-        //     this.game.load.image(
-        //         this.game.customConfig.bootPreloadImages[i].key, 
-        //         this.game.customConfig.bootPreloadImages[i].url);
-        // }
-
-        // for(var i=0; i< global.config.bootPreloadImages.length; i ++){
-        //     this.game.load.image(
-        //         global.config.bootPreloadImages[i].key, 
-        //         global.config.bootPreloadImages[i].url);
-        // }
-
-        // this.load.image('preloadBar', 'assets/images/preloadbar.png');
-        // this.load.image('preloadBarBorder','assets/images/preloadbar_border.png');
+        for(var i=0; i< this.game.customConfig.bootPreloadImages.length; i ++){
+            this.game.load.image(
+                this.game.customConfig.bootPreloadImages[i].key, 
+                this.game.customConfig.bootPreloadImages[i].url);
+        }
     },
 
     create: function(){
+        this.game.config.enableDebug = false;
+        // this.game.add.plugin(Phaser.Plugin.Debug);
         this.game.stage.backgroundColor = '#000';
         this.game.state.start('Preload');
     }

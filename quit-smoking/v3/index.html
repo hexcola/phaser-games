@@ -19,7 +19,6 @@
         }*/
 
     </style>
-    <script src="libs/global.js"></script>
     <script src="libs/phaser.min.js"></script>
     <script src="libs/phaser-debug.js"></script>
     <script src="libs/helper.js"></script>
@@ -30,10 +29,9 @@
     </div>
 
     <script src="src/js/boot.js"></script>
-    <script src="src/js/preload.js"></script>
     <script src="src/js/mainmenu.js"></script>
+    <script src="src/js/preload.js"></script>
     <script src="src/js/gameplay.js"></script>
-    <script src="src/js/gameover.js"></script>
 
     <script>
         (function(){
@@ -58,12 +56,11 @@
                 content.style.width  = (viewport_h * gameBestRatio) + "px";
             } 
 
-            var game = new Phaser.Game(gameBestWidth, gameBestHeight, Phaser.WEBGL , "content");
+            var game = new Phaser.Game(gameBestWidth, gameBestHeight, Phaser.AUTO , "content");
             game.state.add('Boot', boot);
-            game.state.add('Preload', preload);
             game.state.add('MainMenu', mainMenu);
+            game.state.add('Preload', preload);
             game.state.add('Gameplay', gameplay);
-            game.state.add('Gameover', gameover);
             game.state.start('Boot');
         })();
     </script>
