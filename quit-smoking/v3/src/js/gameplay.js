@@ -192,6 +192,18 @@ gameplay.prototype = {
             this.isGameRunning = false;
             this.bullet.body.velocity.setTo(0,0);
 
+            this.game.allAudios.play('death');
+            this.bullet.position.setTo(this.game.rnd.integerInRange(100, this.world.width - 100), 410);
+            this.playCount ++;
+            this.warmup();
+
+        }else if(hitObject.frameName === "block_on.png"){
+            hitObject.loadTexture('defaultRes', 'block_off.png');
+            this.game.allAudios.play('hit');
+            hitObject.body.destroy();
+            this.count ++;
+            this.text.setText("Killed "+this.count+" Lungs Cells");
+
             var allclear = true;
             // check remamining blocks
             this.targets.forEach(function(item){
@@ -202,20 +214,10 @@ gameplay.prototype = {
 
             if(allclear){
                 this.isGameOver = true;
+                this.isGameRunning = false;
+                this.bullet.body.velocity.setTo(0,0);
                 this.gameOverMenu();
-            } else {
-                this.game.allAudios.play('death');
-                this.bullet.position.setTo(this.game.rnd.integerInRange(100, this.world.width - 100), 410);
-                this.playCount ++;
-                this.warmup();
             }
-
-        }else if(hitObject.frameName === "block_on.png"){
-            hitObject.loadTexture('defaultRes', 'block_off.png');
-            this.game.allAudios.play('hit');
-            hitObject.body.destroy();
-            this.count ++;
-            this.text.setText("Killed "+this.count+" Lungs Cells");
         }
     },
 
